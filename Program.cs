@@ -18,10 +18,12 @@ namespace RoverControlCenter
         foreach(Object space in probes){
             Console.WriteLine($"Tracking a {space.GetType()}");
         }
+        IDirectable[] crafts = {lunokhod, apollo, sojourner, sputnik};
+        DirectAll(crafts);
     }
 
-    public static void DirectAll(Rover[] aRover){
-        foreach(Rover item in aRover){
+    public static void DirectAll(IDirectable[] aRover){
+        foreach(IDirectable item in aRover){
             Console.WriteLine(item.GetInfo());
             Console.WriteLine(item.Explore());
             Console.WriteLine(item.Collect());
